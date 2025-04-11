@@ -171,7 +171,7 @@ const study = lab.util.fromObject({
 study.run()
 study.run().then(() => {
   // Gửi dữ liệu sau khi khảo sát kết thúc
-  fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEBAPP_ID/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbxFd4uiMuwORITXIerCgxcCUvVTFe8fDWCLF0_WmnfPPzbXZPAtEUm7YYbEtUwOW_Iw/exec", {
     method: "POST",
     mode: "no-cors",
     headers: {
