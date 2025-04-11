@@ -169,3 +169,14 @@ const study = lab.util.fromObject({
 
 // Let's go!
 study.run()
+study.run().then(() => {
+  // Gửi dữ liệu sau khi khảo sát kết thúc
+  fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEBAPP_ID/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(lab.data.json),
+  });
+});
