@@ -164,7 +164,7 @@ const study = lab.util.fromObject({
       "messageHandlers": {
         "after:end": function anonymous(
 ) {
-fetch("https://script.google.com/macros/s/AKfycbx06_RlSOOOL6SI1Sb85_uyosAoV4ljlQPbuOY-4BG66FJqepLrsxPRd76PVKpcRH8i/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyvwXB_Ecd69RZ4-Drc077OyWm9s0_v-ug3Xng5J8FGbo9OuPnPEthqnY97MPAq8w0J/exec", {
   method: "POST",
   mode: "no-cors",
   headers: {
@@ -176,7 +176,11 @@ fetch("https://script.google.com/macros/s/AKfycbx06_RlSOOOL6SI1Sb85_uyosAoV4ljlQ
 }
       },
       "title": "Form"
-    }
+    },{
+    "type": "lab.flow.End",
+    "message": "Cảm ơn bạn đã tham gia khảo sát!",
+    "timeout": 1000
+}
   ]
 })
 
