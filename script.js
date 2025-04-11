@@ -161,7 +161,20 @@ const study = lab.util.fromObject({
         "": ""
       },
       "parameters": {},
-      "messageHandlers": {},
+      "messageHandlers": {
+        "after:end": function anonymous(
+) {
+fetch("https://script.google.com/macros/s/AKfycbxFd4uiMuwORITXIerCgxcCUvVTFe8fDWCLF0_WmnfPPzbXZPAtEUm7YYbEtUwOW_Iw/exec", {
+  method: "POST",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(lab.data.json)
+});
+
+}
+      },
       "title": "Form"
     }
   ]
@@ -169,14 +182,3 @@ const study = lab.util.fromObject({
 
 // Let's go!
 study.run()
-study.run().then(() => {
-  // Gửi dữ liệu sau khi khảo sát kết thúc
-  fetch("https://script.google.com/macros/s/AKfycbxFd4uiMuwORITXIerCgxcCUvVTFe8fDWCLF0_WmnfPPzbXZPAtEUm7YYbEtUwOW_Iw/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(lab.data.json),
-  });
-});
