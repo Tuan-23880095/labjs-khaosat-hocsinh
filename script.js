@@ -164,7 +164,7 @@ const study = lab.util.fromObject({
       "messageHandlers": {
         "after:end": function anonymous(
 ) {
-fetch("https://script.google.com/macros/s/AKfycbxFd4uiMuwORITXIerCgxcCUvVTFe8fDWCLF0_WmnfPPzbXZPAtEUm7YYbEtUwOW_Iw/exec", {
+fetch("https://script.google.com/macros/s/AKfycbx06_RlSOOOL6SI1Sb85_uyosAoV4ljlQPbuOY-4BG66FJqepLrsxPRd76PVKpcRH8i/exec", {
   method: "POST",
   mode: "no-cors",
   headers: {
