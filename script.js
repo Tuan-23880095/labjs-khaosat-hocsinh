@@ -164,6 +164,7 @@ const study = lab.util.fromObject({
       "messageHandlers": {
         "after:end": function anonymous(
 ) {
+          const dataToSend = study.options.datastore.exportJson(); 
 fetch("https://script.google.com/macros/s/AKfycbyLP7PtSenpwbaRgy48wnhoke4AV-GY0YP1D2wsWvuw6G51ZTMp9fUEVm1N7UFsxmWF/exec", {
   method: "POST",
    headers: {
