@@ -164,13 +164,23 @@ const study = lab.util.fromObject({
       "messageHandlers": {
         "after:end": function anonymous(
 ) {
-fetch("https://script.google.com/macros/s/AKfycbyvwXB_Ecd69RZ4-Drc077OyWm9s0_v-ug3Xng5J8FGbo9OuPnPEthqnY97MPAq8w0J/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyLP7PtSenpwbaRgy48wnhoke4AV-GY0YP1D2wsWvuw6G51ZTMp9fUEVm1N7UFsxmWF/exec", {
   method: "POST",
-  mode: "no-cors",
-  headers: {
+   headers: {
     "Content-Type": "application/json"
   },
-  body: JSON.stringify(lab.data.json)
+  body: JSON.stringify(dataToSend)
+})
+.then(response => {
+  // Kiểm tra phản hồi
+  if (!response.ok) throw new Error("Request failed " + response.status);
+  return response.json();
+})
+.then(result => {
+  console.log("Server response:", result);
+})
+.catch(error => {
+  console.error("Fetch error:", error);
 });
 
 }
