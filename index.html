@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Experiment</title>
+  <title>Khảo sát Nhanh trí Sáng mắt</title>
   <!-- viewport setup -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- lab.js library and experiment code -->
@@ -14,26 +14,6 @@
   <script src="script.js" defer="true"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-  <!-- Nhúng thư viện PapaParse -->
-<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
-
-<!-- Đọc và parse CSV -->
-<script>
-  fetch('data.csv')
-    .then(response => response.text())
-    .then(csvText => {
-      const result = Papa.parse(csvText, {
-        header: true,
-        skipEmptyLines: true
-      });
-      console.log(result.data); // Mảng các dòng dạng object
-
-      // Ví dụ hiển thị ra HTML
-      const output = document.createElement('pre');
-      output.textContent = JSON.stringify(result.data, null, 2);
-      document.body.appendChild(output);
-    });
-</script>
 
 <body>
   <!-- If you'd rather have a container with a fixed width
@@ -41,8 +21,8 @@
   <div class="container fullscreen" data-labjs-section="main">
     <main class="content-vertical-center content-horizontal-center">
       <div>
-        <h2>Loading Experiment</h2>
-        <p>The experiment is loading and should start in a few seconds</p>
+        <h2>Đang tải khảo sát...</h2>
+        <p>Vui lòng chờ trong giây lát.</p>
       </div>
     </main>
   </div>
