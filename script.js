@@ -5,195 +5,213 @@ const study = lab.util.fromObject({
   "parameters": {},
   "plugins": [
     {
-      "type": "lab.plugins.Metadata",
-      "path": undefined
+      "type": "lab.plugins.Metadata"
     },
     {
       "type": "lab.plugins.Download",
-      "filePrefix": "cognitive-pattern-analysis-in-vietnamese-high-school-students",
-      "path": undefined
+      "filePrefix": "khaosat-hocsinh",
     }
   ],
   "metadata": {
-    "title": "Cognitive Pattern Analysis in Vietnamese High School Students",
-    "description": "This study investigates high school students’ cognitive strategies through a set of problem-solving tasks including figure analysis, numerical reasoning, spatial design, and logic-based multiple-choice questions. Participants' response time and answer justifications are also recorded to evaluate decision-making behavior.",
+    "title": "Khảo sát Nhanh trí Sáng mắt",
+    "description": "Đo tốc độ và tư duy nhận biết hình, logic, chuỗi số của học sinh THPT Việt Nam.",
     "repository": "",
     "contributors": ""
   },
   "files": {},
   "responses": {},
   "content": [
-    {
-      "type": "lab.flow.Sequence",
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Sequence",
-      "content": [
-        {
-          "type": "lab.html.Form",
-          "content": "\u003Cform\u003E\n  \u003Ch3\u003EThông tin học sinh\u003C\u002Fh3\u003E\n\n  \u003Clabel for=\"ho_ten\"\u003EHọ và tên:\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Cinput type=\"text\" name=\"ho_ten\" id=\"ho_ten\" required\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n  \u003Clabel for=\"truong\"\u003ETrường học:\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Cinput type=\"text\" name=\"truong\" id=\"truong\" required\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n  \u003Clabel for=\"lop\"\u003ELớp:\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Cinput type=\"text\" name=\"lop\" id=\"lop\" required\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n  \u003Clabel for=\"diem_toan\"\u003EBạn đánh giá mức độ học môn Toán của mình ở mức nào?\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Cselect name=\"diem_toan\" id=\"diem_toan\" required\u003E\n    \u003Coption value=\"\" disabled selected\u003E-- Chọn một mức --\u003C\u002Foption\u003E\n    \u003Coption value=\"kha\"\u003EKhá\u003C\u002Foption\u003E\n    \u003Coption value=\"kha_gioi\"\u003EKhá giỏi\u003C\u002Foption\u003E\n    \u003Coption value=\"gioi\"\u003EGiỏi\u003C\u002Foption\u003E\n    \u003Coption value=\"xuat_sac\"\u003EXuất sắc\u003C\u002Foption\u003E\n  \u003C\u002Fselect\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n  \u003Cbutton type=\"submit\"\u003EBắt đầu làm khảo sát\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E\n\n\u003Chr\u003E\n\n\u003Ch4\u003E🧪 Nhóm nghiên cứu\u003C\u002Fh4\u003E\n\u003Cp\u003ENhóm Nghiên cứu Khoa học – Giáo dục học\u003C\u002Fp\u003E\n\u003Cp\u003EKhoa Toán – Tin học, Trường Đại học Khoa học Tự nhiên, Đại học Quốc gia TP.HCM (HCMUS – VNU-HCM)\u003C\u002Fp\u003E\n\u003Cp\u003ELiên hệ: \u003Ca href=\"mailto:ththao@hcmus.edu.vn\"\u003Eththao@hcmus.edu.vn \u003C\u002Fa\u003E\u003C\u002Fp\u003E\n",
-          "scrollTop": true,
-          "files": {},
-          "responses": {
-            "": ""
-          },
-          "parameters": {},
-          "messageHandlers": {},
-          "title": "Form"
-        },
-        {
-          "type": "lab.html.Form",
-          "content": "\u003Cform\u003E\n  \u003Ch3\u003EPhần 1: (5 phút)\u003C\u002Fh3\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EVí dụ:\u003C\u002Fstrong\u003E Trong bài kiểm tra \u003Cem\u003EPhân tích hình ảnh \u002F Figure Analysis\u003C\u002Fem\u003E, mỗi câu hỏi đưa ra một hình vuông được gấp lại nhiều lần theo chiều của mũi tên và sau đó được đục một hoặc nhiều lỗ xuyên qua.\u003C\u002Fp\u003E\n\n\u003Cp\u003EHọc sinh phải tính toán sản phẩm cuối cùng sẽ trông như thế nào khi mở ra và chọn từ năm đáp án được cung cấp.\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EVí dụ như hình sau:\u003C\u002Fstrong\u003E Khi gấp giấy góc chéo hình vuông, sau đó gấp góc lại thành hình thang như hình rồi đục 3 lỗ như hình. Sau khi mở lại trang giấy ta có hình C.\u003C\u002Fp\u003E\n\n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002F8O0z566.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n  \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
-          "scrollTop": true,
-          "files": {
-            "phan5c.png": "embedded\u002Fb660ca6ad8a0418ab0a3a43712c93c3673af04dc0883e5a2671c4420de2501fc.png",
-            "phan5b.png": "embedded\u002F283f64d0516bc74824d88f49696aedf105c5893e793f99671a73727363d2bc48.png",
-            "phan5a.png": "embedded\u002Fe3dcc5010692ff0d754279ac5b66fea408746b334b798fa1ef6f83ba458a2a79.png",
-            "phan3.png": "embedded\u002Fbf71e9381c3742ecbc84224c6abd754cb0f35852190403c404dc24ce60624cfc.png",
-            "cau3.png": "embedded\u002F8484994df97a44e7b4b870e00d593b434e493d2c17fd20ce02fab6ce282df3ae.png",
-            "cau2.png": "embedded\u002Ff2cc0c8ed34b5b01fdf0b5c289a667eb22ff7bfda002576891b0b8d0cf5fd256.png",
-            "cau1.png": "embedded\u002F6bf495b725630acd6f1bcf344718d4353378712d3182aca97db0937f40060e52.png",
-            "mau.png": "embedded\u002Ff911d0fe169282888dbff4b2782187b0391a5b072879ef533752300c2215f12b.png"
-          },
-          "responses": {
-            "": ""
-          },
-          "parameters": {},
-          "messageHandlers": {},
-          "title": "Form"
-        }
-      ]
-    },
+    // 1. THÔNG TIN CÁ NHÂN
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002F7GYWiaK.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\n  \u003Cp\u003E\u003Cstrong\u003EHãy chọn số phù hợp với hình trên :\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q1\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q1\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q1\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q1\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q1\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Thông tin học sinh</h3>
+  <label for="ho_ten">Họ tên (viết tắt, VD: N.V.A):</label><br>
+  <input type="text" name="ho_ten" id="ho_ten" pattern="^([A-Z]\\.){1,}[A-Z]$" placeholder="N.V.A" required><br><br>
+
+  <label for="lop">Lớp:</label><br>
+  <select name="lop" id="lop" required>
+    <option value="" disabled selected>-- Chọn lớp --</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+  </select><br><br>
+
+  <label for="ma_so">Mã số (do HS tự đặt, VD: AB83):</label><br>
+  <input type="text" name="ma_so" id="ma_so" pattern="[A-Za-z]{2}[0-9]{2}" required><br><br>
+
+  <label for="truong">Trường THPT:</label><br>
+  <input type="text" name="truong" id="truong" required><br><br>
+
+  <label for="khu_vuc">Khu vực:</label><br>
+  <select name="khu_vuc" id="khu_vuc" required>
+    <option value="" disabled selected>-- Chọn khu vực --</option>
+    <option value="Bắc">Bắc</option>
+    <option value="Trung">Trung</option>
+    <option value="Tây Nam Bộ">Tây Nam Bộ</option>
+    <option value="Tây Nguyên">Tây Nguyên</option>
+    <option value="Miền núi phía Bắc">Miền núi phía Bắc</option>
+  </select><br><br>
+  <button type="submit">Bắt đầu khảo sát</button>
+</form>
+<hr>
+<p><small>Xin cảm ơn bạn đã tham gia khảo sát!<br>
+Kết quả sẽ gửi lại cho bạn (theo mã số) để biết mình đạt bao nhiêu % nhanh mắt, sáng trí.<br>
+Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</small></p>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Thông tin học sinh"
     },
+
+    // 2. GIỚI THIỆU & VÍ DỤ
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FULNoaIC.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\n  \u003Cp\u003E\u003Cstrong\u003EHãy chọn số phù hợp với hình trên :\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q2\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q2\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q2\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q2\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q2\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Ví dụ minh họa</h3>
+  <p><strong>Ví dụ:</strong> Trong bài kiểm tra <em>Phân tích hình ảnh / Figure Analysis</em>, mỗi câu hỏi đưa ra một hình vuông được gấp lại nhiều lần theo chiều của mũi tên và sau đó được đục một hoặc nhiều lỗ xuyên qua. Học sinh phải tính toán sản phẩm cuối cùng sẽ trông như thế nào khi mở ra và chọn từ năm đáp án được cung cấp.</p>
+  <p>Ví dụ ở trên: Khi gấp giấy góc chéo hình vuông, sau đó gấp góc lại thành hình thang như hình rồi đục 3 lỗ như hình. Sau khi mở lại trang giấy ta có hình C.</p>
+  <img src="https://i.imgur.com/8O0z566.png" alt="Ví dụ" width="50%">
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Ví dụ"
     },
+
+    // 3. CÂU HÌNH 1
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FKIvDdrY.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\n  \u003Cp\u003E\u003Cstrong\u003EHãy chọn số phù hợp với hình trên :\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q3\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q3\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q3\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q3\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q3\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Câu 1</h3>
+  <img src="https://i.imgur.com/7GYWiaK.png" alt="Hình 1" width="50%">
+  <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
+  <label><input type="radio" name="Q1" value="1" required> A. 1</label><br>
+  <label><input type="radio" name="Q1" value="2"> B. 2</label><br>
+  <label><input type="radio" name="Q1" value="3"> C. 3</label><br>
+  <label><input type="radio" name="Q1" value="4"> D. 4</label><br>
+  <label><input type="radio" name="Q1" value="5"> E. 5</label><br><br>
+  <label>Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
+  <input type="number" name="Q1_time" min="0" max="600" required><br><br>
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Câu 1"
     },
+
+    // 4. CÂU HÌNH 2
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n \u003Ch3\u003EPhần 2:\u003C\u002Fh3\u003E\n\u003Cp\u003E\u003Cstrong\u003EHãy tìm ra quy luật của dãy số và chọn ra số tiếp theo trong dãy từ những đáp án đề bài đưa ra. \u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n  \u003Cp\u003ECho dãy số  50, 47, 44, 49, 46, 43, 48, 45, …  Số hạng tiếp theo của dãy số là số nào?\u003C\u002Fp\u003E\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q4\" value=\"42\" required\u003E A. 42\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q4\" value=\"6\"\u003E B. 6\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q4\" value=\"8\"\u003E C. 8\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q4\" value=\"24\"\u003E D. 24\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q4\" value=\"48\"\u003E E. 48\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n\u003Clabel for=\"Q4_expl\"\u003E\u003Cstrong\u003ESau đó giải thích tại sao bạn chọn đáp án đó:\u003C\u002Fstrong\u003E\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Ctextarea name=\"Q4_expl\" rows=\"4\" cols=\"60\" placeholder=\"Viết lý do của bạn tại đây...\"\u003E\u003C\u002Ftextarea\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Câu 2</h3>
+  <img src="https://i.imgur.com/ULNoaIC.png" alt="Hình 2" width="50%">
+  <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
+  <label><input type="radio" name="Q2" value="1" required> A. 1</label><br>
+  <label><input type="radio" name="Q2" value="2"> B. 2</label><br>
+  <label><input type="radio" name="Q2" value="3"> C. 3</label><br>
+  <label><input type="radio" name="Q2" value="4"> D. 4</label><br>
+  <label><input type="radio" name="Q2" value="5"> E. 5</label><br><br>
+  <label>Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
+  <input type="number" name="Q2_time" min="0" max="600" required><br><br>
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Câu 2"
     },
+
+    // 5. CÂU HÌNH 3
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n \u003Ch3\u003EPhần 3(5 phút):\u003C\u002Fh3\u003E\n\u003Cp\u003E\u003Cstrong\u003EHãy thiết kế nào trong năm thiết kế có cùng kích thước với hình phác bên trên: \u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FdRZNboi.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n  \u003Cp\u003E\u003Cstrong\u003EHãy chọn số phù hợp với hình trên :\u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q5\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q5\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q5\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q5\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q5\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Câu 3</h3>
+  <img src="https://i.imgur.com/KIvDdrY.png" alt="Hình 3" width="50%">
+  <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
+  <label><input type="radio" name="Q3" value="1" required> A. 1</label><br>
+  <label><input type="radio" name="Q3" value="2"> B. 2</label><br>
+  <label><input type="radio" name="Q3" value="3"> C. 3</label><br>
+  <label><input type="radio" name="Q3" value="4"> D. 4</label><br>
+  <label><input type="radio" name="Q3" value="5"> E. 5</label><br><br>
+  <label>Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
+  <input type="number" name="Q3_time" min="0" max="600" required><br><br>
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Câu 3"
     },
+
+    // 6. CÂU DÃY SỐ LOGIC
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n \u003Ch3\u003EPhần 5a :\u003C\u002Fh3\u003E\n \n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FGW3LjiZ.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EHãy chọn một trong các hình từ 1 đến 5, phù hợp với vị trí còn trống của hình phác bên trên: \u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q6\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q6\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q6\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q6\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q6\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n\u003Clabel for=\"Q6_expl\"\u003E\u003Cstrong\u003ESau đó giải thích tại sao bạn chọn đáp án đó:\u003C\u002Fstrong\u003E\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Ctextarea name=\"Q6_expl\" rows=\"4\" cols=\"60\" placeholder=\"Viết lý do của bạn tại đây...\"\u003E\u003C\u002Ftextarea\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Câu 4: Quy luật dãy số</h3>
+  <p>Cho dãy số 50, 47, 44, 49, 46, 43, 48, 45, ... Số hạng tiếp theo của dãy số là số nào?</p>
+  <label><input type="radio" name="Q4" value="12" required> A. 12</label><br>
+  <label><input type="radio" name="Q4" value="6"> B. 6</label><br>
+  <label><input type="radio" name="Q4" value="8"> C. 8</label><br>
+  <label><input type="radio" name="Q4" value="24"> D. 24</label><br>
+  <label><input type="radio" name="Q4" value="48"> E. 48</label><br><br>
+  <label>Giải thích tại sao bạn chọn đáp án đó:</label><br>
+  <textarea name="Q4_explain" rows="3" cols="60" placeholder="Nêu lý do chọn đáp án..."></textarea><br><br>
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Câu 4"
     },
+
+    // 7. CÂU HÌNH KHỐI - chọn thiết kế
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n \u003Ch3\u003EPhần 5b :\u003C\u002Fh3\u003E\n \n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FPRx14nc.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EHãy chọn một trong các hình từ 1 đến 5, phù hợp với vị trí còn trống của hình phác bên trên: \u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q7\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q7\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q7\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q7\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q7\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n\n    \u003Cbutton type=\"submit\"\u003ETiếp tục\u003C\u002Fbutton\u003E\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Câu 5: Thiết kế hình</h3>
+  <img src="https://i.imgur.com/dRZNboi.png" alt="Hình 5" width="50%">
+  <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
+  <label><input type="radio" name="Q5" value="1" required> A. 1</label><br>
+  <label><input type="radio" name="Q5" value="2"> B. 2</label><br>
+  <label><input type="radio" name="Q5" value="3"> C. 3</label><br>
+  <label><input type="radio" name="Q5" value="4"> D. 4</label><br>
+  <label><input type="radio" name="Q5" value="5"> E. 5</label><br><br>
+  <label>Giải thích tại sao bạn chọn đáp án đó:</label><br>
+  <textarea name="Q5_explain" rows="3" cols="60" placeholder="Nêu lý do chọn đáp án..."></textarea><br><br>
+  <button type="submit">Tiếp tục</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {},
-      "title": "Form"
+      "title": "Câu 5"
     },
+
+    // 8. Ý KIẾN GÓP Ý
     {
       "type": "lab.html.Form",
-      "content": "\u003Cform\u003E\n \u003Ch3\u003EPhần 5c :\u003C\u002Fh3\u003E\n \n\u003Cp\u003E\n  \u003Cimg src=\"https:\u002F\u002Fi.imgur.com\u002FrHAqc69.png\" alt=\"Hình minh họa\" width=\"50%\"\u003E\n\u003C\u002Fp\u003E\n\n\u003Cp\u003E\u003Cstrong\u003EHãy chọn một trong các hình từ 1 đến 5, phù hợp với vị trí còn trống của hình phác bên trên: \u003C\u002Fstrong\u003E\u003C\u002Fp\u003E\n\n\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q8\" value=\"1\" required\u003E A. 1\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q8\" value=\"2\"\u003E B. 2\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q8\" value=\"3\"\u003E C. 3\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q8\" value=\"4\"\u003E D. 4\u003C\u002Flabel\u003E\u003Cbr\u003E\n  \u003Clabel\u003E\u003Cinput type=\"radio\" name=\"Q8\" value=\"5\"\u003E E. 5\u003C\u002Flabel\u003E\u003Cbr\u003E\u003Cbr\u003E\n\n    \u003Cbutton type=\"submit\"\u003EGửi bài & Kết thúc khảo sát\u003C\u002Fbutton\u003E\n\n    \u003Cp style=\"font-style: italic; color: green;\"\u003E🎉 Cảm ơn bạn đã hoàn thành khảo sát! Kết quả của bạn đã được ghi nhận.\u003C\u002Fp\u003E\n\n\u003C\u002Fform\u003E",
+      "content": `
+<form>
+  <h3>Ý kiến đóng góp</h3>
+  <label>Bạn có nhận xét/góp ý gì về bài khảo sát này không?</label><br>
+  <textarea name="ykien" rows="3" cols="60" placeholder="Ghi nhận xét nếu có..."></textarea><br>
+  <p style="font-style:italic; color:green;">🎉 Cảm ơn bạn đã hoàn thành khảo sát! Kết quả của bạn đã được ghi nhận.</p>
+  <button type="submit">Kết thúc</button>
+</form>
+      `,
       "scrollTop": true,
-      "files": {},
-      "responses": {
-        "": ""
-      },
-      "parameters": {},
-      "messageHandlers": {
-        "after:end": function anonymous(
-) {
-          const dataToSend = study.options.datastore.exportJson(); 
-fetch("AKfycbxB_TGMJU8wKmYf_z_c3XgyDGgmrm-sIteTyGmA-ljgLT6cquNVZlYK1UUf9RVrw728", {
-  method: "POST",
-   headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(dataToSend)
-})
-.then(response => {
-  // Kiểm tra phản hồi
-  if (!response.ok) throw new Error("Request failed " + response.status);
-  return response.json();
-})
-.then(result => {
-  console.log("Server response:", result);
-})
-.catch(error => {
-  console.error("Fetch error:", error);
+      "title": "Ý kiến đóng góp"
+    },
+
+    // 9. KẾT THÚC
+    {
+      "type": "lab.flow.End",
+      "message": "Cảm ơn bạn đã tham gia khảo sát! Chúc bạn học tốt và nhiều thành công!"
+    }
+  ]
 });
 
-}
-      },
-      "title": "Form"
-    },{
-    "type": "lab.flow.End",
-    "message": "Cảm ơn bạn đã tham gia khảo sát!",
-    "timeout": 1000
-}
-  ]
-})
-
-// Let's go!
-study.run()
+// Bắt đầu khảo sát
+study.run();
