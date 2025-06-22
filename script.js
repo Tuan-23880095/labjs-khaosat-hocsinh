@@ -107,8 +107,6 @@ const study = lab.util.fromObject({
             <label><input type="radio" name="Q1" value="3"> C. 3</label>
             <label><input type="radio" name="Q1" value="4"> D. 4</label>
             <label><input type="radio" name="Q1" value="5"> E. 5</label>
-            <label for="Q1_time">Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
-            <input type="number" name="Q1_time" id="Q1_time" min="0" max="600" required>
             <button type="submit">Tiếp tục</button>
           </form>
         </div>
@@ -130,8 +128,7 @@ const study = lab.util.fromObject({
             <label><input type="radio" name="Q2" value="3"> C. 3</label>
             <label><input type="radio" name="Q2" value="4"> D. 4</label>
             <label><input type="radio" name="Q2" value="5"> E. 5</label>
-            <label for="Q2_time">Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
-            <input type="number" name="Q2_time" id="Q2_time" min="0" max="600" required>
+
             <button type="submit">Tiếp tục</button>
           </form>
         </div>
@@ -153,8 +150,7 @@ const study = lab.util.fromObject({
             <label><input type="radio" name="Q3" value="3"> C. 3</label>
             <label><input type="radio" name="Q3" value="4"> D. 4</label>
             <label><input type="radio" name="Q3" value="5"> E. 5</label>
-            <label for="Q3_time">Em mất bao nhiêu thời gian để tìm ra đáp án cho hình này (giây):</label>
-            <input type="number" name="Q3_time" id="Q3_time" min="0" max="600" required>
+
             <button type="submit">Tiếp tục</button>
           </form>
         </div>
