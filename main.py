@@ -4,13 +4,12 @@ import os
 
 app = create_app()
 
-@app.route("/")
-def serve_index():
-    return send_from_directory(app.static_folder, "index.html")
-
 @app.route("/<path:path>")
 def serve_static(path):
     return send_from_directory(app.static_folder, path)
+@app.route("/")
+def serve_index():
+    return send_from_directory(app.static_folder, "index.html")
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
