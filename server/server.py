@@ -24,9 +24,9 @@ def save_data():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8000)
-@app.route('/')
-def index():
-    return send_from_directory('.', 'index.html')
+@app.route("/")
+def serve_index():
+    return send_from_directory(app.static_folder, "index.html")
 
 @app.route('/api/data', methods=['POST'])
 def save_data():
