@@ -1,19 +1,13 @@
-from flask import request, jsonify
+# ==========================
+# 📁 server/server.py
+# ==========================
+from flask import Flask
 from flask_cors import CORS
-from .database import Session, SurveyResponse
+from server.routes.survey_routes import survey_bp
 
-def register_routes(app):
+def create_app():
+    app = Flask(__name__, static_folder="client")
     CORS(app)
-@app.route("/api/data", methods=["POST"])
-    def save_data():
-        try:
-            data = request.json
-            session = Session()
-            response = SurveyResponse(**data)
-            session.add(response)
-            session.commit()
-            return jsonify({"status": "success"}), 200
-        except Exception as e:
-            return jsonify({"status": "error", "message": str(e)}), 500
-        finally:
-            session.close()  # ✅ đảm bảo đóng session dù có lỗi
+    app.register_blueprint(survey_bp)
+    return app
+
