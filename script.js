@@ -283,15 +283,13 @@ const study = lab.util.fromObject({
 
 // Gọi chạy khảo sát và gửi dữ liệu về Google Sheets khi xong
 study.run().then(() => {
-  const jsonData = study.options.datastore.exportJson();
-  fetch('https://script.google.com/macros/s/AKfycbxB_TGMJU8wKmYf_z_c3XgyDGgmrm-sIteTyGmA-ljgLT6cquNVZlYK1UUf9RVrw728/exec', {
-    method: 'POST',
-    body: jsonData,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    mode: 'no-cors' // Thêm dòng này
-  });
-  alert("Dữ liệu đã được gửi. (Lưu ý: Không thể kiểm tra phản hồi do CORS!)");
+  const jsonData = JSON.parse(study.options.datastore.exportJson());
+  db.collection("responses").add(jsonData)
+    .then(() => {
+      alert("Đã gửi dữ liệu thành công lên Firestore!");
+    })
+    .catch((error) => {
+      alert("Lỗi gửi Firestore: " + error);
+    });
 });
 
