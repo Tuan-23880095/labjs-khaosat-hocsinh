@@ -1,6 +1,7 @@
 import os
 from sqlalchemy import create_engine, Column, String, Integer, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
+from dotenv import load_dotenv
 from sqlalchemy.orm import sessionmaker
 from datetime import datetime
 
@@ -9,7 +10,10 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
+# ✅ Load file .env vào môi trường
+load_dotenv()
 
+DATABASE_URL = os.getenv("DATABASE_URL")
 class SurveyResponse(Base):
     __tablename__ = "responses"
     id = Column(Integer, primary_key=True)
