@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
+from server.database import Session, SurveyResponse
 import csv
 import os
 
@@ -7,7 +8,19 @@ app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
 
 DATA_FILE = 'data.csv'
+def save_data():
+    try:
+        data = request.json
+        session = Session()
+        response = SurveyResponse(**data)
+        session.add(response)
+        session.commit()
+        return jsonify({"status": "success"}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8000)
 @app.route('/')
 def index():
     return send_from_directory('.', 'index.html')
