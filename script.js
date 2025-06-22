@@ -281,5 +281,25 @@ const study = lab.util.fromObject({
   ]
 });
 
-// Bắt đầu khảo sát
-study.run();
+// Gọi chạy khảo sát và gửi dữ liệu về Google Sheets khi xong
+study.run().then(() => {
+  const jsonData = study.options.datastore.exportJson();
+
+  // Đường link Apps Script Google Sheets của bạn
+  fetch('https://script.google.com/macros/s/AKfycbxB_TGMJU8wKmYf_z_c3XgyDGgmrm-sIteTyGmA-ljgLT6cquNVZlYK1UUf9RVrw728/exec', {
+    method: 'POST',
+    body: jsonData,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("Dữ liệu đã được gửi thành công!");
+    console.log("Server response:", result);
+  })
+  .catch(error => {
+    alert("Lỗi khi gửi dữ liệu!");
+    console.error("Lỗi:", error);
+  });
+});
