@@ -1,16 +1,10 @@
-// Define study
 const study = lab.util.fromObject({
   "title": "root",
   "type": "lab.flow.Sequence",
   "parameters": {},
   "plugins": [
-    {
-      "type": "lab.plugins.Metadata"
-    },
-    {
-      "type": "lab.plugins.Download",
-      "filePrefix": "khaosat-hocsinh",
-    }
+    { "type": "lab.plugins.Metadata" },
+    { "type": "lab.plugins.Download", "filePrefix": "khaosat-hocsinh" }
   ],
   "metadata": {
     "title": "Khảo sát Nhanh trí Sáng mắt",
@@ -24,6 +18,10 @@ const study = lab.util.fromObject({
     // 1. THÔNG TIN CÁ NHÂN
     {
       "type": "lab.html.Form",
+      "title": "Thông tin học sinh",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Thông tin học sinh</h3>
@@ -59,14 +57,16 @@ const study = lab.util.fromObject({
 <p><small>Xin cảm ơn bạn đã tham gia khảo sát!<br>
 Kết quả sẽ gửi lại cho bạn (theo mã số) để biết mình đạt bao nhiêu % nhanh mắt, sáng trí.<br>
 Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</small></p>
-      `,
-      "scrollTop": true,
-      "title": "Thông tin học sinh"
+      `
     },
 
     // 2. GIỚI THIỆU & VÍ DỤ
     {
       "type": "lab.html.Form",
+      "title": "Ví dụ",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Ví dụ minh họa</h3>
@@ -75,14 +75,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <img src="https://i.imgur.com/8O0z566.png" alt="Ví dụ" width="50%">
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Ví dụ"
+      `
     },
 
     // 3. CÂU HÌNH 1
     {
       "type": "lab.html.Form",
+      "title": "Câu 1",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Câu 1</h3>
@@ -97,14 +99,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <input type="number" name="Q1_time" min="0" max="600" required><br><br>
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Câu 1"
+      `
     },
 
     // 4. CÂU HÌNH 2
     {
       "type": "lab.html.Form",
+      "title": "Câu 2",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Câu 2</h3>
@@ -119,14 +123,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <input type="number" name="Q2_time" min="0" max="600" required><br><br>
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Câu 2"
+      `
     },
 
     // 5. CÂU HÌNH 3
     {
       "type": "lab.html.Form",
+      "title": "Câu 3",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Câu 3</h3>
@@ -141,14 +147,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <input type="number" name="Q3_time" min="0" max="600" required><br><br>
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Câu 3"
+      `
     },
 
     // 6. CÂU DÃY SỐ LOGIC
     {
       "type": "lab.html.Form",
+      "title": "Câu 4: Quy luật dãy số",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Câu 4: Quy luật dãy số</h3>
@@ -162,14 +170,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <textarea name="Q4_explain" rows="3" cols="60" placeholder="Nêu lý do chọn đáp án..."></textarea><br><br>
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Câu 4"
+      `
     },
 
     // 7. CÂU HÌNH KHỐI - chọn thiết kế
     {
       "type": "lab.html.Form",
+      "title": "Câu 5: Thiết kế hình",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Câu 5: Thiết kế hình</h3>
@@ -184,14 +194,16 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <textarea name="Q5_explain" rows="3" cols="60" placeholder="Nêu lý do chọn đáp án..."></textarea><br><br>
   <button type="submit">Tiếp tục</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Câu 5"
+      `
     },
 
     // 8. Ý KIẾN GÓP Ý
     {
       "type": "lab.html.Form",
+      "title": "Ý kiến đóng góp",
+      "parameters": {},
+      "metadata": {},
+      "scrollTop": true,
       "content": `
 <form>
   <h3>Ý kiến đóng góp</h3>
@@ -200,14 +212,15 @@ Nhóm nghiên cứu, Khoa Toán-Tin, ĐH Khoa học Tự nhiên - ĐHQG TPHCM.</
   <p style="font-style:italic; color:green;">🎉 Cảm ơn bạn đã hoàn thành khảo sát! Kết quả của bạn đã được ghi nhận.</p>
   <button type="submit">Kết thúc</button>
 </form>
-      `,
-      "scrollTop": true,
-      "title": "Ý kiến đóng góp"
+      `
     },
 
     // 9. KẾT THÚC
     {
       "type": "lab.flow.End",
+      "title": "Kết thúc",
+      "parameters": {},
+      "metadata": {},
       "message": "Cảm ơn bạn đã tham gia khảo sát! Chúc bạn học tốt và nhiều thành công!"
     }
   ]
