@@ -43,22 +43,5 @@
     .then(result => console.log("✅ Gửi thành công:", result))
     .catch(error => console.error("❌ Gửi thất bại:", error));
   });
-</script>
 
-<!-- ✅ Firebase config (giữ nguyên nếu bạn dùng Firestore nữa) -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyBMsx1WJ1NnwL0qY2wzwAJraH6VmRAtMEk",
-    authDomain: "khaosathocsinh-bb5b4.firebaseapp.com",
-    projectId: "khaosathocsinh-bb5b4",
-    storageBucket: "khaosathocsinh-bb5b4.appspot.com",
-    messagingSenderId: "338871973085",
-    appId: "1:338871973085:web:30b2774103609138125734",
-    measurementId: "G-NL7MG47S25"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
 </html>
