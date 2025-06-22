@@ -102,7 +102,7 @@ const study = lab.util.fromObject({
             <h3>Câu 1</h3>
             <img src="static/images/cau1.png" alt="Hình 1">
             <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
-            <label><input type="radio" name="Q1" value="1" required> A. 1</label>
+            <label><input type="radio" name="Q1" value="1"> A. 1</label>
             <label><input type="radio" name="Q1" value="2"> B. 2</label>
             <label><input type="radio" name="Q1" value="3"> C. 3</label>
             <label><input type="radio" name="Q1" value="4"> D. 4</label>
@@ -123,7 +123,7 @@ const study = lab.util.fromObject({
             <h3>Câu 2</h3>
             <img src="static/images/cau2.png" alt="Hình 2">
             <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
-            <label><input type="radio" name="Q2" value="1" required> A. 1</label>
+            <label><input type="radio" name="Q2" value="1"> A. 1</label>
             <label><input type="radio" name="Q2" value="2"> B. 2</label>
             <label><input type="radio" name="Q2" value="3"> C. 3</label>
             <label><input type="radio" name="Q2" value="4"> D. 4</label>
@@ -145,7 +145,7 @@ const study = lab.util.fromObject({
             <h3>Câu 3</h3>
             <img src="static/images/cau3.png" alt="Hình 3">
             <p><strong>Hãy chọn số phù hợp với hình trên:</strong></p>
-            <label><input type="radio" name="Q3" value="1" required> A. 1</label>
+            <label><input type="radio" name="Q3" value="1"> A. 1</label>
             <label><input type="radio" name="Q3" value="2"> B. 2</label>
             <label><input type="radio" name="Q3" value="3"> C. 3</label>
             <label><input type="radio" name="Q3" value="4"> D. 4</label>
@@ -166,11 +166,11 @@ const study = lab.util.fromObject({
           <form>
             <h3>Câu 4: Quy luật dãy số</h3>
             <p>Cho dãy số 50, 47, 44, 49, 46, 43, 48, 45, ... Số hạng tiếp theo của dãy số là số nào?</p>
-            <label><input type="radio" name="Q4" value="42"> A. 42</label>
-            <label><input type="radio" name="Q4" value="41"> B. 41</label>
-            <label><input type="radio" name="Q4" value="40"> C. 40</label>
-            <label><input type="radio" name="Q4" value="39"> D. 39</label>
-            <label><input type="radio" name="Q4" value="khac"> E. Khác</label>
+            <label><input type="radio" name="Q4" value="12"> A. 12</label>
+            <label><input type="radio" name="Q4" value="6"> B. 6</label>
+            <label><input type="radio" name="Q4" value="8"> C. 8</label>
+            <label><input type="radio" name="Q4" value="24"> D. 24</label>
+            <label><input type="radio" name="Q4" value="48"> E. 48</label>
             <label for="Q4_explain">Giải thích tại sao bạn chọn đáp án đó:</label>
             <textarea name="Q4_explain" id="Q4_explain" rows="3" cols="60" placeholder="Nêu lý do chọn đáp án..."></textarea>
             <button type="submit">Tiếp tục</button>
