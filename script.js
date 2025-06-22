@@ -2,27 +2,7 @@ const study = lab.util.fromObject({
   "title": "root",
   "type": "lab.flow.Sequence",
   "parameters": {},
-  "plugins": [
-    {
-      "type": "lab.plugins.Transmit",
-      "url": "/api/data",
-      "metadata": {
-        "device": {
-          "type": "object",
-          "properties": {
-            "userAgent": { "type": "string" },
-            "screen": {
-              "type": "object",
-              "properties": {
-                "width": { "type": "number" },
-                "height": { "type": "number" }
-              }
-            }
-          }
-        }
-      }
-    }
-  ],
+  "plugins": [ ],
   "metadata": {
     "title": "Khảo sát Nhanh trí Sáng mắt",
     "description": "Đo tốc độ và tư duy nhận biết hình, logic, chuỗi số của học sinh THPT Việt Nam.",
