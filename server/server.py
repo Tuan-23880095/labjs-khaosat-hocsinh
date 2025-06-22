@@ -4,8 +4,7 @@ from .database import Session, SurveyResponse
 
 def register_routes(app):
     CORS(app)
-
-    @app.route("/api/data", methods=["POST"])
+@app.route("/api/data", methods=["POST"])
     def save_data():
         try:
             data = request.json
