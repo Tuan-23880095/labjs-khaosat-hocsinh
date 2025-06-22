@@ -29,34 +29,25 @@
 </body>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
 <script>
   // Dán firebaseConfig ở đây
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBMsx1WJ1NnwL0qY2wzwAJraH6VmRAtMEk",
-  authDomain: "khaosathocsinh-bb5b4.firebaseapp.com",
-  projectId: "khaosathocsinh-bb5b4",
-  storageBucket: "khaosathocsinh-bb5b4.firebasestorage.app",
-  messagingSenderId: "338871973085",
-  appId: "1:338871973085:web:30b2774103609138125734",
-  measurementId: "G-NL7MG47S25"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  const firebaseConfig = {
+    apiKey: "AIzaSyBMsx1WJ1NnwL0qY2wzwAJraH6VmRAtMEk",
+    authDomain: "khaosathocsinh-bb5b4.firebaseapp.com",
+    projectId: "khaosathocsinh-bb5b4",
+    storageBucket: "khaosathocsinh-bb5b4.appspot.com",  // sửa lại, thiếu chữ "appspot"
+    messagingSenderId: "338871973085",
+    appId: "1:338871973085:web:30b2774103609138125734",
+    measurementId: "G-NL7MG47S25"
+  };
 
   // Khởi tạo Firebase
   firebase.initializeApp(firebaseConfig);
   // Khởi tạo Firestore
   const db = firebase.firestore();
 </script>
+
 
 </html>
