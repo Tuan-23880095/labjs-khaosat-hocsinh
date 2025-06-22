@@ -27,4 +27,30 @@
     </main>
   </div>
 </body>
+<script>
+  // Sau khi khảo sát kết thúc (Lab.js v2)
+  study.run().then(() => {
+    // Lấy toàn bộ dữ liệu khảo sát
+    const jsonData = study.options.datastore.exportJson();
+
+    // Gửi về Google Apps Script endpoint
+    fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+      method: 'POST',
+      body: jsonData,
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(response => response.text())
+    .then(result => {
+      alert("Dữ liệu đã được gửi thành công!");
+      console.log("Server response:", result);
+    })
+    .catch(error => {
+      alert("Lỗi khi gửi dữ liệu!");
+      console.error("Lỗi:", error);
+    });
+  });
+</script>
+
 </html>
